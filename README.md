@@ -1,5 +1,5 @@
 Example of result for user number 1 (json formatted as in lab description):
-
+```json
 {
     "user": 0,
     "1": {
@@ -24,3 +24,4 @@ Example of result for user number 1 (json formatted as in lab description):
         "movie 26": 2.403
     }
 }
+```
