@@ -1,6 +1,7 @@
 import csv
 import math
 import operator
+import json
 
 USER_NUMBER = 0  # real number minus one
 KNN = 7
@@ -89,7 +90,18 @@ format_data(grade_matrix)
 for user in grade_matrix:
     user_sims.append(sim_u_v(USER_NUMBER, user_v, grade_matrix))
     user_v += 1
+
+data = {"user": USER_NUMBER}
+json_counter = 0
+counter_state = 1
 for movie_grade in grade_matrix[USER_NUMBER]:
     if movie_grade == -1:
-        print("movie: ", movie, " : ", round(r_u_i(USER_NUMBER, movie, grade_matrix, user_sims), 3))
+        if counter_state == 1:
+            counter_state = 0
+            json_counter += 1
+            data[str(json_counter)] = {}
+        data[str(json_counter)]["movie " + str(movie)] = round(r_u_i(USER_NUMBER, movie, grade_matrix, user_sims), 3)
+    else:
+        counter_state = 1
     movie += 1
+print(json.dumps(data, indent=4))
