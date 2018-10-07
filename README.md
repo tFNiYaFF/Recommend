@@ -1,4 +1,7 @@
+<b>FIRST TASK</b>
+
 Example of result for user number 1 (json formatted as in lab description):
+
 ```json
 {
     "user": 1,
@@ -25,3 +28,4 @@ Example of result for user number 1 (json formatted as in lab description):
     }
 }
 ```
+<b>SECOND TASK</b>
