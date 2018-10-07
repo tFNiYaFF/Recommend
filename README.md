@@ -29,3 +29,9 @@ Example of result for user number 1 (json formatted as in lab description):
 }
 ```
 <b>SECOND TASK</b>
+
+User;  1  , Film:  29
+User;  12 , Film:  25
+User;  28 , Film:  23
+User;  39 , Film:  16
+User;  40 , Film:  1

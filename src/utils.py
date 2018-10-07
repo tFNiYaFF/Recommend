@@ -50,6 +50,21 @@ def sim_u_v(u, v, grades):
     return sim
 
 
+def common_values(target_user, stat, matrix):
+    user_num = 0
+    for user in matrix:
+        stat.append(0)
+        if user_num == target_user:
+            user_num += 1
+            continue
+        i = 0
+        for value in user:
+            if value == matrix[target_user][i] and value != -1:
+                stat[user_num] += 1
+            i += 1
+        user_num += 1
+
+
 def r_u_i(u, i, grades, sims, knn):
     u_avg_sum = count = 0
     for grade in grades[u]:
