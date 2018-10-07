@@ -1,6 +1,6 @@
 import csv
-import math
 import operator
+import math
 
 
 def load_data(matrix, name, delimiter):
@@ -14,17 +14,25 @@ def load_data(matrix, name, delimiter):
             row = row + 1
 
 
-def format_data_from_csv_to_nums(matrix):
-    del (matrix[0])  # deleting header
+def clean_data(matrix):
+    del (matrix[0])
     row = 0
     for row_data in matrix:
         temp_row_data = row_data[1:]
         i = 0
         for column_data in temp_row_data:
-            temp_row_data[i] = int(column_data.replace(" ", ""))
+            temp_row_data[i] = column_data.replace(" ", "")
             i = i + 1
         matrix[row] = temp_row_data
         row = row + 1
+
+
+def format_data_from_csv_to_nums(matrix):
+    for row_data in matrix:
+        i = 0
+        for column_data in row_data:
+            row_data[i] = int(column_data)
+            i = i + 1
 
 
 def sim_u_v(u, v, grades):
