@@ -42,7 +42,7 @@ if __name__ == '__main__':
             break
         u_v_days_places_sims_mul_ratio[user] = 0
     if current_movie == -1:
-        print("Film doesn't found")
+        print("Film didn't found")
     else:
         print("User; ", user_number + 1, ", Film: ", current_movie + 1)
 else:
