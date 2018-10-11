@@ -7,7 +7,7 @@ if __name__ == '__main__':
     user_number = 0
     try:
         user_number = int(argv[1])
-    except IndexError or TypeError:
+    except (IndexError, TypeError):
         print("Incorrect input argument.")
         exit(1)
     grade_matrix, place_matrix, day_matrix, user_sims, u_v_days_common, u_v_places_common = [], [], [], [], [], []
