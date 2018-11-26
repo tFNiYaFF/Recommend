@@ -1,15 +1,9 @@
 import config
 import utils
 import operator
-from sys import argv
 
-if __name__ == '__main__':
-    user_number = 0
-    try:
-        user_number = int(argv[1])
-    except (IndexError, TypeError):
-        print("Incorrect input argument.")
-        exit(1)
+
+def get_film(user_number):
     grade_matrix, place_matrix, day_matrix, user_sims, u_v_days_common, u_v_places_common = [], [], [], [], [], []
     u_v_days_places_sims_mul_ratio = []
     utils.load_data(grade_matrix, config.GRADES_DATA_FILE_NAME, config.DELIMITER)
@@ -42,9 +36,6 @@ if __name__ == '__main__':
             break
         u_v_days_places_sims_mul_ratio[user] = 0
     if current_movie == -1:
-        print("Film didn't found")
+        return -1
     else:
-        print("User; ", user_number + 1, ", Film: ", current_movie + 1)
-else:
-    print("Mode is not available")
-    exit(1)
+        return current_movie + 1
